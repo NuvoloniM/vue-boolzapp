@@ -1,0 +1,42 @@
+
+:root {
+    --primary-color: #e9eaed;
+    --notifica-info: #99dafd
+}
+
+
+.sfondo {
+    height: 100vh;
+    background-image:
+    linear-gradient(to bottom,
+    #009688 0px,
+    #009688 15vh,
+    #dddbd1 15vh,
+    #d2dbdc 100%) ;
+}
+
+.grey_bg{
+    background-color: #e9eaed;
+}
+
+.img_user{
+    width: 60px;
+}
+
+.text_notifica{
+    color: var(--notifica-info);
+}
+
+.bg_notifica {
+    background-color: var(--notifica-info);
+}
+
+.light_text {
+    font-size: 0.8em;
+    color: #b9b9ba;
+}
+
+.active_chat{
+    background-color: #e8ebee;
+}
+

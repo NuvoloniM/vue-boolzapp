@@ -12,7 +12,65 @@
 <body>
     
     <div id="root">
-        
+        <div class="sfondo py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- colonna di sinistra -->
+                    <div class="col-4">
+                        <!-- sezione con profilo utente e icone -->
+                        <div class="d-flex justify-content-between align-items-center grey_bg px-3 py-2">
+                            <div>
+                                <img src="./asset/img/avatar_io.jpg" alt="Mio Avatar" class=" rounded-circle img_user pe-2">
+                                <span>Sofia</span>
+                            </div>
+                            <div class="text-secondary ">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message mx-1"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <!-- sezione notifiche -->
+                        <div class="d-flex align-items-center p-3 bg_notifica">
+                            <div class="rounded-circle bg-white text_notifica p-2">
+                                <i class="fa-solid fa-bell-slash fa-lg"></i>
+                            </div>
+                            <div class="ms-2">
+                                <div>Ricevi notifiche di nuovi messaggi</div>
+                                <a href="#" class="light_text text-secondary">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                        <!-- sezione filtro -->
+                        <div class="grey_bg p-2">
+                            <div class="input-group text-secondary">
+                                <span class="input-group-text bg-white" id="inputGroup-sizing-default">
+                                    <i class="fa-solid fa-magnifying-glass text-secondary"></i>   
+                                </span>
+                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca o Inizia una nuova chat">
+                            </div> 
+                        </div>
+                        <!-- Chats -->
+                        <div class="border border-1 border-dark p-3">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between active_chat">
+                                    <div class="d-flex align-items-center">
+                                        <img src="./asset/img/avatar_1.jpg" alt="immagine di Michele" class="rounded-circle img_user pe-2">
+                                        <div>
+                                            <div>Michele</div>
+                                            <div class="light_text">Ultimo messaggio inviato</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="light_text">12:00</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- colonna di destra -->
+                    <div class="col-8">colonna destra</div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
