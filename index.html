@@ -62,7 +62,7 @@
                         <div class="overflow-auto">
                             <ul class="list-group">
                                 <li 
-                                v-for="(contact, index) in filteredList" 
+                                v-for="(contact,index) in contacts" 
                                 class="list-group-item d-flex justify-content-between" 
                                 :class="(index == currentIndex) ? 'active_chat': ''"
                                 role="button" 
@@ -104,11 +104,24 @@
                             <ul class="list-group d-flex flex-column">
                                 <li
                                 v-for="(element, index) in contacts[currentIndex].messages" 
-                                class="list-group-item rounded-3 mb-3"
+                                class="list-group-item rounded-3 mb-3 test"
                                 :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
                                 >
-                                    <div>
+                                    <div class="msg pe-2">
                                         {{element.message}}
+                                        <span class="light_text text-end drop_btn">
+                                            <i class="fa-solid fa-angle-down"></i>
+                                        </span>
+                                        <div class="dropdown_content">
+                                            <ul>
+                                                <li>Informazione messaggio</li>
+                                                <li
+                                                @click="removeMsg(index)"
+                                                >
+                                                Elimina messaggio
+                                            </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                     <div class="light_text text-end">
                                         {{changeDate(element.date)}}

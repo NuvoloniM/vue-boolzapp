@@ -30,6 +30,7 @@ var app = new Vue (
             //creo variabile che, in maniera dinamica, cambia a seconda dell'input.value a cui ho messo il v-modal
             newMsg:'',
             searchWord:'',
+            msgIndex:'',
             profilo: {
                 name: 'Sofia',
                 avatar: '_io'
@@ -249,6 +250,12 @@ var app = new Vue (
                 //per come è fatto il nostro array Date, mi serve il secondo elemento splitato, quello delle ore
                 return x[1];
             },
+            //funzione per rimuovere un determinato messaggio
+            removeMsg: function(index){
+                this.msgIndex = index
+                console.log(`l'indice del mex è: ${this.msgIndex}`)
+                this.contacts[this.currentIndex].messages.splice(index,1);
+            }
         }
     }
 )
