@@ -91,7 +91,12 @@
                                 class="list-group-item rounded-3 mb-3"
                                 :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
                                 >
-                                    {{element.message}}
+                                    <div>
+                                        {{element.message}}
+                                    </div>
+                                    <div class="light_text text-end">
+                                        {{changeDate(element.date)}}
+                                    </div>
                                 </li>
                             </ul>
                         </div>

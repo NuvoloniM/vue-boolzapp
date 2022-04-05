@@ -205,6 +205,13 @@ var app = new Vue (
                     status: 'received'
                 }
                 this.contacts[this.currentIndex].messages.push(reply);
+            },
+            //creo funzione per trasformare tutto date solo nell'orario, per essere più facilmente leggibile nel baloon del text
+            changeDate: function(test){
+                //creo una variabile che è l'array risultato dallo split del parametro. con split separo in elementi di array ogni volta che c'è uno spazio
+                let x = test.split(' ');
+                //per come è fatto il nostro array Date, mi serve il secondo elemento splitato, quello delle ore
+                return x[1];
             }
         }
     }
