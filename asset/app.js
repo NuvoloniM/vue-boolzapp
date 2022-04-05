@@ -2,7 +2,9 @@ var app = new Vue (
     {
         el: '#root',
         data: {
+            //creo una variabile che mi indica l'id nella chat aperta in quel momento
             currentIndex:'0',
+            //creo variabile che, in maniera dinamica, cambia a seconda dell'input.value a cui ho messo il v-modal
             newMsg:'',
             profilo: {
                 name: 'Sofia',
@@ -174,19 +176,23 @@ var app = new Vue (
             
         },
         methods: {
+            //funzione per selezionare l'id dell'oggetto contacts per poter selezionare i suoi dati, quali array messaggi nome e img 
             takeIndex: function(index){
                 this.currentIndex = index;
                 console.log(`l'indice dell'user oggetto è: ${this.currentIndex} `)
             },
+            //funzione per creare e pushare un nuovo oggetto nell'array messaggi prendendo la variabile dinamica del v-modal input
             sendMsg: function(){
-                let msg = {
-                    date:'',
-                    message: this.newMsg,
-                    status: 'sent'
+                if (this.newMsg != '') {
+                   let msg = {
+                        date:'',
+                        message: this.newMsg,
+                        status: 'sent'
+                    }
+                    this.contacts[this.currentIndex].messages.push(msg)
+                    this.newMsg = ''; 
                 }
-                this.contacts[this.currentIndex].messages.push(msg)
-                this.newMsg = '';
-            }
+            },
         }
     }
 )
