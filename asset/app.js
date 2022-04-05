@@ -189,10 +189,23 @@ var app = new Vue (
                         message: this.newMsg,
                         status: 'sent'
                     }
-                    this.contacts[this.currentIndex].messages.push(msg)
+                    //pusho nell'array messaggi dell'user giusto
+                    this.contacts[this.currentIndex].messages.push(msg);
+                    //svuoto input value
                     this.newMsg = ''; 
+                    //lancio la funzione asincrona che, dopo tot secondi fa partire la funzione precedentemente creata
+                    setTimeout(this.returnMsg,3000)
                 }
             },
+            //funzione generica che crea un oggetto 'risposta' da pushare nell'array messaggi corrente(dipende da currentIndex)
+            returnMsg: function(){
+                let reply = {
+                    date: '',
+                    message: 'ok',
+                    status: 'received'
+                }
+                this.contacts[this.currentIndex].messages.push(reply);
+            }
         }
     }
 )
