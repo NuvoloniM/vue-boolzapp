@@ -2,6 +2,8 @@ var app = new Vue (
     {
         el: '#root',
         data: {
+            currentIndex:'0',
+            newMsg:'',
             profilo: {
                 name: 'Sofia',
                 avatar: '_io'
@@ -172,7 +174,10 @@ var app = new Vue (
             
         },
         methods: {
-
+            takeIndex: function(index){
+                this.currentIndex = index;
+                console.log(`l'indice dell'user oggetto è: ${this.currentIndex} `)
+            }
         }
     }
 )

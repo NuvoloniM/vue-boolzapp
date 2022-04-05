@@ -51,11 +51,11 @@
                         <!-- Chats -->
                         <div class="overflow-auto">
                             <ul class="list-group overflow-auto">
-                                <li v-for="contact in contacts" class="list-group-item d-flex justify-content-between" role="button">
+                                <li v-for="(contact, index) in contacts" class="list-group-item d-flex justify-content-between" role="button" @click="takeIndex(index)">
                                     <div class="d-flex align-items-center">
                                         <img :src="`./asset/img/avatar${contact.avatar}.jpg`" :alt="`Immagine profilo di ${contact.name}`" class="rounded-circle img_user pe-2">
                                         <div>
-                                            <div>Michele</div>
+                                            <div>{{contact.name}}</div>
                                             <div class="light_text">Ultimo messaggio inviato</div>
                                         </div>
                                     </div>
@@ -71,9 +71,9 @@
                         <!-- mittente chat -->
                         <div class="d-flex justify-content-between align-items-center grey_bg py-2 px-3">
                             <div class="d-flex">
-                                <img src="./asset/img/avatar_1.jpg" alt="avatar di utente 1" class=" rounded-circle img_user pe-2">
+                                <img :src="`./asset/img/avatar${contacts[currentIndex].avatar}.jpg`" :alt="`avatar di ${contacts[currentIndex].name}`" class=" rounded-circle img_user pe-2">
                                 <div>
-                                    <div>Michele</div>
+                                    <div>{{contacts[currentIndex].name}}</div>
                                     <div class="light_text">Ultimo accesso oggi alle 12:00</div>   
                                 </div> 
                             </div>
@@ -86,14 +86,12 @@
                         <!-- Chat aperta -->
                         <div class="sfondo_chats p-3 overflow-auto h-100">
                             <ul class="list-group list-group-flush d-flex flex-column">
-                                <li class="list-group-item rounded-3 sent mb-3 align-self-end">
-                                    Hai portato a spasso il cane?
-                                </li>
-                                <li class="list-group-item rounded-3 sent mb-3 align-self-end">
-                                    Ricordati di stendere i panni 
-                                </li>
-                                <li class="list-group-item rounded-3 received align-self-start">
-                                    Tutto Fatto!
+                                <li
+                                v-for="(element, index) in contacts[currentIndex].messages" 
+                                class="list-group-item rounded-3 mb-3"
+                                :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
+                                >
+                                    {{element.message}}
                                 </li>
                             </ul>
                         </div>
