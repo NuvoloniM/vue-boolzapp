@@ -16,7 +16,7 @@
             <div class="container h-100">
                 <div class="row bg-white g-0 h-100">
                     <!-- colonna di sinistra -->
-                    <div class="col-4 h-100 d-flex flex-column justify-content-between">
+                    <div class="col-4 h-100 d-flex flex-column">
                         <!-- sezione con profilo utente e icone -->
                         <div class="d-flex justify-content-between align-items-center grey_bg py-2 px-3">
                             <div>
@@ -42,17 +42,27 @@
                         <!-- sezione filtro -->
                         <div class="grey_bg p-2">
                             <div class="input-group text-secondary">
-                                <span class="input-group-text bg-white" id="inputGroup-sizing-default">
+                                <span 
+                                class="input-group-text bg-white" 
+                                id="inputGroup-sizing-default"
+                                >
                                     <i class="fa-solid fa-magnifying-glass text-secondary"></i>   
                                 </span>
-                                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder="Cerca o Inizia una nuova chat">
+                                <input 
+                                type="text" 
+                                class="form-control" 
+                                aria-label="Sizing example input" 
+                                aria-describedby="inputGroup-sizing-default" 
+                                placeholder="Cerca o Inizia una nuova chat"
+                                v-model="searchWord"
+                                >
                             </div> 
                         </div>
                         <!-- Chats -->
                         <div class="overflow-auto">
                             <ul class="list-group">
                                 <li 
-                                v-for="(contact, index) in contacts" 
+                                v-for="(contact, index) in filteredList" 
                                 class="list-group-item d-flex justify-content-between" 
                                 :class="(index == currentIndex) ? 'active_chat': ''"
                                 role="button" 
