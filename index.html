@@ -67,6 +67,7 @@
                                 :class="(index == currentIndex) ? 'active_chat': ''"
                                 role="button" 
                                 @click="takeIndex(index)"
+                                v-if="filteredWord(contact) == 'true'"
                                 >
                                     <div class="d-flex align-items-center">
                                         <img :src="`./asset/img/avatar${contact.avatar}.jpg`" :alt="`Immagine profilo di ${contact.name}`" class="rounded-circle img_user pe-2">

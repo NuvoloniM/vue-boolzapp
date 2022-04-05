@@ -201,17 +201,17 @@ var app = new Vue (
             
         },
         //sezione computed metto funzioni un po più complesse
-        computed:{
+        // computed:{
             //creo funzione per filtrare l'array dei contatti
-            filteredList(){
+            // filteredList(){
                 //restituisci la lista dei contatti nei data ma filtrata da una funzione
-                return this.contacts.filter(contact => {
+                // return this.contacts.filter(contact => {
                     /*la funzione che filtra è : prendi ogni nome dell'array contatti, trasfomra tutto in lower case, 
                     controlla se la lettera o parola messa in input sia contenuta nell'array nome*/
-                    return contact.name.toLowerCase().includes(this.searchWord.toLowerCase())
-                })
-            }
-        },
+                    // return contact.name.toLowerCase().includes(this.searchWord.toLowerCase())
+        //         })
+        //     }
+        // },
         methods: {
             //funzione per selezionare l'id dell'oggetto contacts per poter selezionare i suoi dati, quali array messaggi nome e img 
             takeIndex: function(index){
@@ -255,6 +255,16 @@ var app = new Vue (
                 this.msgIndex = index
                 console.log(`l'indice del mex è: ${this.msgIndex}`)
                 this.contacts[this.currentIndex].messages.splice(index,1);
+            },
+            //funzione per filtrare
+            filteredWord: function(element) {
+                let x = element.name.toLowerCase()
+                let y = this.searchWord.toLowerCase()
+                if (x.includes(y) == true) {
+                    return 'true'
+                } else {
+                    return 'false'
+                }
             }
         }
     }
