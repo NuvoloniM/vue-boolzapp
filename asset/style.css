@@ -16,7 +16,7 @@
 }
 
 .grey_bg{
-    background-color: #e9eaed;
+    background-color: var(--primary-color);
 }
 
 .img_user{
@@ -37,6 +37,18 @@
 }
 
 .active_chat{
-    background-color: #e8ebee;
+    background-color: #dedede;
 }
 
+.sfondo_chats {
+    background-image: url(./img/mine.jpg);
+    background-repeat: repeat;
+}
+
+.sent {
+    background-color: #d8f8bf;
+}
+
+.overl_y{
+    overflow-y: scroll;
+}
