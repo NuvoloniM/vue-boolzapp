@@ -177,6 +177,15 @@ var app = new Vue (
             takeIndex: function(index){
                 this.currentIndex = index;
                 console.log(`l'indice dell'user oggetto è: ${this.currentIndex} `)
+            },
+            sendMsg: function(){
+                let msg = {
+                    date:'',
+                    message: this.newMsg,
+                    status: 'sent'
+                }
+                this.contacts[this.currentIndex].messages.push(msg)
+                this.newMsg = '';
             }
         }
     }

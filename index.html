@@ -50,7 +50,7 @@
                         </div>
                         <!-- Chats -->
                         <div class="overflow-auto">
-                            <ul class="list-group overflow-auto">
+                            <ul class="list-group">
                                 <li v-for="(contact, index) in contacts" class="list-group-item d-flex justify-content-between" role="button" @click="takeIndex(index)">
                                     <div class="d-flex align-items-center">
                                         <img :src="`./asset/img/avatar${contact.avatar}.jpg`" :alt="`Immagine profilo di ${contact.name}`" class="rounded-circle img_user pe-2">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <!-- colonna di destra -->
-                    <div class="col-8 d-flex flex-column justify-content-between">
+                    <div class="col-8 h-100 d-flex flex-column justify-content-between">
                         <!-- mittente chat -->
                         <div class="d-flex justify-content-between align-items-center grey_bg py-2 px-3">
                             <div class="d-flex">
@@ -84,8 +84,8 @@
                             </div>
                         </div>
                         <!-- Chat aperta -->
-                        <div class="sfondo_chats p-3 overflow-auto h-100">
-                            <ul class="list-group list-group-flush d-flex flex-column">
+                        <div class="sfondo_chats p-3 h-100 overflow-auto">
+                            <ul class="list-group d-flex flex-column">
                                 <li
                                 v-for="(element, index) in contacts[currentIndex].messages" 
                                 class="list-group-item rounded-3 mb-3"
@@ -100,7 +100,14 @@
                             <span class="input-group-text px-3" id="inputGroup-sizing-sm">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </span>
-                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                            <input 
+                            type="text" 
+                            class="form-control" 
+                            aria-label="Sizing example input" 
+                            aria-describedby="inputGroup-sizing-sm"
+                            v-model="newMsg"
+                            @keyup.enter="sendMsg"
+                            >
                             <span class="input-group-text px-3" id="inputGroup-sizing-sm">
                                 <i class="fa-solid fa-microphone"></i>
                             </span>
