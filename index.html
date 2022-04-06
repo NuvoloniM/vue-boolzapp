@@ -73,7 +73,7 @@
                                         <img :src="`./asset/img/avatar${contact.avatar}.jpg`" :alt="`Immagine profilo di ${contact.name}`" class="rounded-circle img_user pe-2">
                                         <div>
                                             <div>{{contact.name}}</div>
-                                            <div class="light_text">Ultimo messaggio inviato</div>
+                                            <div class="light_text">{{}}</div>
                                         </div>
                                     </div>
                                     <div>
@@ -108,19 +108,26 @@
                                 class="list-group-item rounded-3 mb-3 test"
                                 :class="(element.status == 'sent') ? 'align-self-end sent' : 'align-self-start received'"
                                 >
-                                    <div class="msg pe-2">
+                                    <div class="msg">
                                         {{element.message}}
-                                        <span class="light_text text-end drop_btn">
+                                        <span 
+                                        class="light_text text-end drop_btn"
+                                        role="button"
+                                        @click="openClose(element, index)"
+                                        >
                                             <i class="fa-solid fa-angle-down"></i>
                                         </span>
-                                        <div class="dropdown_content">
+                                        <div 
+                                        class="dropdown_content"
+                                        :class="(index == showIndex) ? 'd-block' : 'd-none'"
+                                        >
                                             <ul>
-                                                <li>Informazione messaggio</li>
+                                                <li>Info messaggio</li>
                                                 <li
                                                 @click="removeMsg(index)"
                                                 >
-                                                Elimina messaggio
-                                            </li>
+                                                Elimina
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>

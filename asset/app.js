@@ -31,6 +31,8 @@ var app = new Vue (
             newMsg:'',
             searchWord:'',
             msgIndex:'',
+            showIndex: '',
+            messaggio:'',
             profilo: {
                 name: 'Sofia',
                 avatar: '_io'
@@ -213,7 +215,6 @@ var app = new Vue (
         //     }
         // },
         created(){
-
         },
         methods: {
             //funzione per selezionare l'id dell'oggetto contacts per poter selezionare i suoi dati, quali array messaggi nome e img 
@@ -264,7 +265,7 @@ var app = new Vue (
             },
             //funzione per rimuovere un determinato messaggio
             removeMsg: function(index){
-                this.msgIndex = index
+                this.msgIndex = index;
                 console.log(`l'indice del mex è: ${this.msgIndex}`)
                 this.contacts[this.currentIndex].messages.splice(index,1);
             },
@@ -277,7 +278,15 @@ var app = new Vue (
                 } else {
                     return 'false'
                 }
-            }
+            },
+            openClose: function(element, index){
+                if (this.showIndex == index) {
+                    return this.showIndex = 'off';
+                } else {
+                    this.showIndex = index;
+                }
+                console.log(this.showIndex = index);
+            },
         }
     }
 )
