@@ -31,7 +31,7 @@ var app = new Vue (
             newMsg:'',
             searchWord:'',
             msgIndex:'',
-            showIndex: '',
+            showIndex: 'x',
             messaggio:'',
             profilo: {
                 name: 'Sofia',
