@@ -73,11 +73,11 @@
                                         <img :src="`./asset/img/avatar${contact.avatar}.jpg`" :alt="`Immagine profilo di ${contact.name}`" class="rounded-circle img_user pe-2">
                                         <div>
                                             <div>{{contact.name}}</div>
-                                            <div class="light_text">{{}}</div>
+                                            <div class="light_text">{{contact.messages[arrayLength(contact.messages)].message}}</div>
                                         </div>
                                     </div>
                                     <div>
-                                        <span class="light_text">12:00</span>
+                                        <span class="light_text">{{contact.messages[arrayLength(contact.messages)].date}}</span>
                                     </div>
                                 </li>
                             </ul>

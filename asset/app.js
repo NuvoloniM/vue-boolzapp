@@ -287,6 +287,9 @@ var app = new Vue (
                 }
                 console.log(this.showIndex = index);
             },
+            arrayLength: function(element){
+                return element.length - 1;
+            }
         }
     }
 )
