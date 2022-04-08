@@ -91,7 +91,7 @@
                                 <img :src="`./asset/img/avatar${contacts[currentIndex].avatar}.jpg`" :alt="`avatar di ${contacts[currentIndex].name}`" class=" rounded-circle img_user pe-2">
                                 <div>
                                     <div>{{contacts[currentIndex].name}}</div>
-                                    <div class="light_text">Ultimo accesso oggi alle 12:00</div>   
+                                    <div class="light_text">Ultimo accesso {{contacts[currentIndex].messages[arrayLength(contacts[currentIndex].messages)].date}}</div>   
                                 </div> 
                             </div>
                             <div class="text-secondary ">
